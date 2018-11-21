@@ -1,0 +1,38 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{title}}</h1>
+    <p class="lead">Bar Beer Drinker Ui for 2</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <p-table [value]="bars" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+          <th>License</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Phone</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-bar>
+        <tr>
+          <td>
+            <a routerLink="/bars/{{ bar.barname }}">
+              {{ bar.barname }}
+            </a>
+          </td>
+          <td>{{ bar.lic }}</td>
+          <td>{{ bar.address }}</td>
+          <td>{{ bar.city }}</td>
+          <td>{{bar.state}}</td>
+          <td>{{ bar.phone }}</td>
+        </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<br><br>
